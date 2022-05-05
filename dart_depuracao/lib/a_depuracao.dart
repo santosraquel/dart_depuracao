@@ -50,62 +50,71 @@ Em caso de um trecho de código retornar uma expressão - valor sem a definiçã
 podemos inserir a expressão na Janela de Inspeção (Watch)
 */
 
-void show(){
+void show() {
   var escolha = 1;
   var n1 = 7.0;
   var n2 = 8.0;
   var mediaAprovacao = 6.0;
-  var resultado = interfaceAprovacao(escolha, n1, n2, mediaAprovacao) ? 'aprovado' : 'reprovado';
-  print('cenário 1 → está ok? >>${resultado == 'aprovado'}<<. esperado: aprovado; resultado foi $resultado');
+  var resultado = interfaceAprovacao(escolha, n1, n2, mediaAprovacao)
+      ? 'aprovado'
+      : 'reprovado';
+  print(
+      'cenário 1 → está ok? >>${resultado == 'aprovado'}<<. esperado: aprovado; resultado foi $resultado');
 
   escolha = 2;
   n1 = 4.0;
   n2 = 3.0;
   mediaAprovacao = 6.0;
-  resultado = interfaceAprovacao(escolha, n1, n2, mediaAprovacao) ? 'aprovado' : 'reprovado';
-  print('cenário 2 → está ok? >>${resultado == 'reprovado'}<<. esperado: reprovado; resultado foi $resultado');
+  resultado = interfaceAprovacao(escolha, n1, n2, mediaAprovacao)
+      ? 'aprovado'
+      : 'reprovado';
+  print(
+      'cenário 2 → está ok? >>${resultado == 'reprovado'}<<. esperado: reprovado; resultado foi $resultado');
 
   escolha = 2;
   n1 = 5.0;
   n2 = 7.0;
   mediaAprovacao = 6.0;
-  resultado = interfaceAprovacao(escolha, n1, n2, mediaAprovacao) ? 'aprovado' : 'reprovado';
-  print('cenário 2 → está ok? >>${resultado == 'reprovado'}<<. esperado: reprovado; resultado foi $resultado');
+  resultado = interfaceAprovacao(escolha, n1, n2, mediaAprovacao)
+      ? 'aprovado'
+      : 'reprovado';
+  print(
+      'cenário 2 → está ok? >>${resultado == 'aprovado'}<<. esperado: aprovado; resultado foi $resultado');
 }
 
-bool interfaceAprovacao(int escolha, double nota1, double nota2, double mediaAprovacao){
+bool interfaceAprovacao(
+    int escolha, double nota1, double nota2, double mediaAprovacao) {
   double nota;
-  if(escolha == 1){
+  if (escolha == 1) {
     nota = calcularMedia(nota1, nota2);
-    
-  } else if(escolha == 2){
+  } else if (escolha == 2) {
     nota = calcularMedia(nota1, nota2);
   } else {
     nota = calcularMenorNota(nota1, nota2);
   }
-    return  verificarAprovacao(nota, mediaAprovacao);
+  return verificarAprovacao(nota, mediaAprovacao);
 }
 
-bool verificarAprovacao(double nota, double media){
+bool verificarAprovacao(double nota, double media) {
   return (nota >= media);
 }
 
-double calcularMedia(double nota1, double nota2){
+double calcularMedia(double nota1, double nota2) {
   return (nota1 + nota2) / 2;
 }
 
-double calcularMaiorNota(double nota1, double nota2){
+double calcularMaiorNota(double nota1, double nota2) {
   double maior = nota1;
-  if(nota2 > nota1){
+  if (nota2 > nota1) {
     maior = nota2;
-  } 
+  }
   return maior;
 }
 
-double calcularMenorNota(double nota1, double nota2){
+double calcularMenorNota(double nota1, double nota2) {
   double menor = nota1;
-  if(nota2 < nota1){
+  if (nota2 < nota1) {
     menor = nota2;
-  } 
+  }
   return menor;
 }
