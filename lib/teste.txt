@@ -1,0 +1,16 @@
+nota1 = 7.0
+nota2 = 8.0
+media = 7.0
+qtdePresença = 70
+cargaHoraria = 80
+percentualMinimaPresenca = 75.0
+
+nota1 = 7.0 * 4 = 
+
+verificarAprovacaoPresenca(70, 80, 60)
+
+PercentualPresenca
+	(70 * 100) / 80 = 
+	7000 / 80 = 87,5
+
+	87,5 > 60 ? = true
